@@ -1,0 +1,15 @@
+{"ts":"2026-03-06T14:08:51.412Z","service":"vc-webhooks","level":"WARN","event":"worker.latency.high","pool":"primary","latency_ms":287,"threshold_ms":50}
+{"ts":"2026-03-06T14:09:32.108Z","service":"vc-webhooks","level":"WARN","event":"worker.nack.elevated","pool":"primary","nack_rate_pct":1.8,"window_seconds":60}
+{"ts":"2026-03-06T14:11:04.221Z","service":"vc-webhooks","level":"INFO","event":"poolhealth","primary":{"status":"DEGRADED","latency_ms":312,"last_ack_age_s":4.2},"standby":{"status":"HEALTHY","latency_ms":41,"last_ack_age_s":0.3}}
+{"ts":"2026-03-06T14:14:18.099Z","service":"vc-webhooks","level":"INFO","event":"pool.failover.requested","from":"primary","to":"standby","authorised_by":"sre.tier3.oncall"}
+{"ts":"2026-03-06T14:16:02.733Z","service":"vc-webhooks","level":"ERROR","event":"pool.failover.failed","to":"standby","reason":"tls.handshake.failed: certificate expired 2025-09-09"}
+{"ts":"2026-03-06T14:31:14.581Z","service":"vc-webhooks","level":"INFO","event":"pool.failover.succeeded","to":"standby","cert_rotation_id":"ROT-2026-03-06-001"}
+{"ts":"2026-03-06T14:38:42.000Z","service":"vc-webhooks","level":"INFO","event":"queue.drain.started","queue":"webhook_outbound","peak_depth":12438}
+{"ts":"2026-03-09T17:30:12.118Z","service":"vc-dataplatform","level":"WARN","event":"ledger.lookup.latency","p50_ms":92,"p95_ms":284,"baseline_p50_ms":35}
+{"ts":"2026-03-09T17:54:09.221Z","service":"vc-sync","level":"ERROR","event":"sync.lag.high","pipeline":"crm-to-analytics","lag_seconds":480,"threshold_seconds":300}
+{"ts":"2026-03-09T18:03:33.044Z","service":"vc-sync","level":"INFO","event":"worker.pool.scaled","queue":"crm_to_analytics","from":8,"to":24,"authorised_by":"sre.tier3.oncall"}
+{"ts":"2026-03-09T18:48:18.917Z","service":"vc-dataplatform","level":"INFO","event":"batch.killed","batch_id":"Q1-REPORTING-2026-02","cluster":"prod","authorised_by":"sre.tier3.oncall","reason":"violates ringfencing policy"}
+{"ts":"2026-03-09T19:15:02.512Z","service":"vc-sync","level":"INFO","event":"sync.lag.recovered","pipeline":"crm-to-analytics","lag_seconds":38}
+{"ts":"2026-03-12T15:33:20.001Z","service":"vc-sync","level":"WARN","event":"dedup.miss","detail":"6 candidate duplicate records detected by reconciliation, not by dedup engine","release_observed":"sdk/v4.18"}
+{"ts":"2026-03-12T16:02:33.447Z","service":"vc-sdk-release","level":"INFO","event":"release.rollback","from":"v4.18","to":"v4.17.3","reason":"dedup-key regression on retry"}
+{"ts":"2026-03-13T11:18:50.811Z","service":"vc-identity","level":"WARN","event":"acl.deny.403","tenant_id":"TEN-STAGECOACH-2021","client_id":"oauth-client-stagecoach-prod","scope_requested":"cases:write","scope_granted":"cases:read","prior_grant_revoked_at":"2026-03-12T15:42:11Z"}

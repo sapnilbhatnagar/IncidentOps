@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.python-version
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# uv
+.uv/
+uv.lock.bak
+
+# Node / Next.js
+node_modules/
+.next/
+.turbo/
+.pnpm-store/
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Vercel
+.vercel/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# LanceDB / vector store artefacts
+*.lance/
+incidentops/data/index/
+incidentops/agent/_index/
+
+# Inspect AI run artefacts
+inspect-logs/
+.inspect/
+incidentops/evals/_runs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Obsidian (this folder lives inside an Obsidian vault)
+.obsidian/
+.obsidian-trash/
