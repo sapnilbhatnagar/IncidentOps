@@ -1,6 +1,6 @@
 # IncidentOps
 
-Grounded, action-aware AI agent for enterprise SaaS support and platform operations. Portfolio piece for the Tomoro.ai application.
+Grounded, action-aware AI agent for enterprise SaaS support and platform operations. 
 
 > **Status (2026-04-27).** Phase 0 complete. Phase 1 (repo scaffold + corpus expansion) is next. See `session-log.md` for the latest decision log.
 
