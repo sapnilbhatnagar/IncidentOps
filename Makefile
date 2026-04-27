@@ -13,7 +13,7 @@ corpus:
 	$(PYTHON) incidentops/data/validate_corpus.py
 
 evals:
-	$(UV) run inspect eval incidentops/evals/helpful/task.py incidentops/evals/honest/task.py incidentops/evals/harmless/task.py --log-dir .inspect_logs
+	$(UV) run python -m incidentops.evals.run_evals
 
 agent:
 	$(PYTHON) -m incidentops.agent.pipeline

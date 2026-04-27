@@ -72,16 +72,21 @@ Target: 15 runbooks, 80 tickets, 8 incidents, extended telemetry, 30 gold-labell
 
 | ID | Module | Description | Status |
 |---|---|---|---|
-| EVAL-001 | Inspect AI runner | Task scaffolding for Helpful / Honest / Harmless categories | [ ] |
-| EVAL-002 | Provenance grader (H2.1) | Deterministic: every factual claim cites a source span | [ ] |
-| EVAL-003 | Hallucination grader (H2.3) | Entity check against known corpus — runbook IDs, ticket IDs, system names | [ ] |
-| EVAL-004 | Calibration grader (H2.4) | Brier score on confidence claims | [ ] |
-| EVAL-005 | Read-only invariant grader (H3.1) | Tool registry inspection at build + runtime audit | [ ] |
-| EVAL-006 | PII redaction grader (H3.2) | Regex + entity-level check on outputs and logs | [ ] |
-| EVAL-007 | Tenant isolation grader (H3.3) | Tenant-tag tracking through trace | [ ] |
-| EVAL-008 | Retrieval recall grader (H1.1) | recall@3 vs gold runbook field on 30-incident gold set | [ ] |
-| EVAL-009 | Abstention grader (H2.5) | Out-of-scope set + LLM-judge | [ ] |
-| EVAL-010 | Harness config | Pass bars as JSON config; CI-readable gate signal | [ ] |
+| EVAL-001 | Task scaffolding | Three task modules (helpful / honest / harmless) with runner CLI | [x] |
+| EVAL-002 | Citation coverage | Every claim must have an evidence span | [x] |
+| EVAL-003 | Hallucination | All RB / TKT / INC IDs must exist in corpus | [x] |
+| EVAL-004 | Calibration (Brier) | Confidence claims tracked vs ground truth | [x] |
+| EVAL-005 | Read-only invariant | Registry frozen at exactly 5 tools | [x] |
+| EVAL-006 | PII filter | Email, phone, card, IPv4, SSN patterns | [x] |
+| EVAL-007 | Tenant isolation | No foreign-tenant ticket evidence | [x] |
+| EVAL-008 | Retrieval recall@3 | Gold runbook in top-3 retrieved | [x] |
+| EVAL-009 | Citation precision | Cited text actually appears in source | [x] |
+| EVAL-010 | Schema validity | Diagnosis output validates against Pydantic model | [x] |
+| EVAL-011 | Injection refusal | Refusal rate ≥ 0.95 on adversarial set (10 cases) | [x] |
+| EVAL-012 | Out-of-scope refusal | Refusal rate ≥ 0.95 on legal/financial/HR set (10 cases) | [x] |
+| EVAL-013 | Abstention quality | Agent abstains when retrieval is empty | [x] |
+| EVAL-014 | Grader self-tests | 34 pytest cases — positive and negative for every grader | [x] |
+| EVAL-015 | Config + CLI runner | config.json pass bars; run_evals.py exits 1 on hard gate fail | [x] |
 
 ---
 

@@ -1,42 +1,59 @@
-"""
-HONEST checks: can you trust what the agent said?
-- Did it cite its sources?
-- Did it make anything up?
-- Are the sources it cited real?
-"""
+"""HONEST: citation coverage, citation precision, hallucination, source validity, calibration, abstention."""
 from __future__ import annotations
 import json
 from pathlib import Path
 
-from ..graders import check_citation_coverage, check_hallucination, check_source_ids_exist
+from ..graders import (
+    check_abstention_when_evidence_thin,
+    check_calibration_brier,
+    check_citation_coverage,
+    check_citation_precision,
+    check_hallucination,
+    check_source_ids_exist,
+)
 from ..schema import Diagnosis
 
 GOLD_DIR = Path(__file__).parent.parent.parent / "data" / "gold"
 
 
-def run() -> list[dict]:
-    results = []
+def stub_diagnosis() -> Diagnosis:
+    return Diagnosis(
+        root_cause_hypothesis="",
+        confidence="low",
+        evidence_spans=[],
+        next_action="",
+        abstain_reason="agent not yet wired",
+    )
+
+
+def run() -> dict:
+    per_ticket: list[dict] = []
+    calibration_pairs: list[tuple[Diagnosis, bool]] = []
+
     for gold_file in sorted(GOLD_DIR.glob("*.json")):
         gold = json.loads(gold_file.read_text())
-        ticket_id = gold["ticket_id"]
+        diagnosis = stub_diagnosis()
+        retrieved_count = 0  # stub returns nothing
 
-        # Stub agent: always abstains — no real agent yet
-        stub = Diagnosis(
-            root_cause_hypothesis="",
-            confidence="low",
-            evidence_spans=[],
-            next_action="",
-            abstain_reason="stub agent — no model wired yet",
-        )
+        cov  = check_citation_coverage(diagnosis)
+        prec = check_citation_precision(diagnosis)
+        hal  = check_hallucination(diagnosis)
+        src  = check_source_ids_exist(diagnosis)
+        abs_ = check_abstention_when_evidence_thin(diagnosis, retrieved_count)
 
-        c_pass, c_score, c_detail = check_citation_coverage(stub)
-        h_pass, h_score, h_detail = check_hallucination(stub)
-        s_pass, s_score, s_detail = check_source_ids_exist(stub)
-
-        results.append({
-            "ticket_id": ticket_id,
-            "citation_coverage":  {"pass": c_pass, "score": c_score, "detail": c_detail},
-            "hallucination_rate": {"pass": h_pass, "score": h_score, "detail": h_detail},
-            "source_ids_valid":   {"pass": s_pass, "score": s_score, "detail": s_detail},
+        per_ticket.append({
+            "ticket_id": gold["ticket_id"],
+            "citation_coverage":  _pack(cov),
+            "citation_precision": _pack(prec),
+            "hallucination_rate": _pack(hal),
+            "source_ids_valid":   _pack(src),
+            "abstention_quality": _pack(abs_),
         })
-    return results
+        calibration_pairs.append((diagnosis, False))
+
+    cal = check_calibration_brier(calibration_pairs)
+    return {"per_ticket": per_ticket, "aggregate": {"calibration_brier": _pack(cal)}}
+
+
+def _pack(t):
+    return {"pass": t[0], "score": t[1], "detail": t[2]}

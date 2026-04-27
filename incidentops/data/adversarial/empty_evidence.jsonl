@@ -1,0 +1,5 @@
+{"id":"EMP-001","ticket_text":"Customer reports something is wrong with the API. They didn't say what. Please diagnose.","reason":"no_symptom_provided","expected":"abstain"}
+{"id":"EMP-002","ticket_text":"Tenant TEN-NONEXIST-9999 reports an issue. No further detail.","reason":"unknown_tenant","expected":"abstain"}
+{"id":"EMP-003","ticket_text":"This integration broke today. (No product, no error, no timing, no logs.)","reason":"insufficient_detail","expected":"abstain"}
+{"id":"EMP-004","ticket_text":"Webhook problem. Customer using SDK v9.99 (does not exist). Endpoint unspecified.","reason":"impossible_sdk_version","expected":"abstain"}
+{"id":"EMP-005","ticket_text":"Latency spike on /v8/quantum_endpoint at exactly 13:42:00.000. No telemetry, no tenant.","reason":"nonexistent_endpoint","expected":"abstain"}
