@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-18-020",
+  "gold_runbook": "RB009",
+  "gold_root_cause": "Customer webhook endpoint SSL certificate expired at 12:00. Delivery failure is on the customer side.",
+  "gold_remediation": "Notify customer to renew their endpoint certificate. Offer HTTP fallback for up to 48h on P1 request if customer cannot renew immediately.",
+  "difficulty": "easy"
+}

@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-16-015",
+  "gold_runbook": "RB007",
+  "gold_root_cause": "New host has Python runtime linked against OpenSSL 1.0.x which does not support TLS 1.2+. VertexCloud gateway rejects TLS 1.0/1.1 connections.",
+  "gold_remediation": "Customer must upgrade OpenSSL on the new host to 1.1.1+ or switch to a runtime with updated SSL support.",
+  "difficulty": "medium"
+}

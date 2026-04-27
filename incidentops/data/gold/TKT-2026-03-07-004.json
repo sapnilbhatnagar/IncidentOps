@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-07-004",
+  "gold_runbook": "RB003",
+  "gold_root_cause": "Customer-side endpoint outage. Staging endpoint registered in production webhook config by mistake.",
+  "gold_remediation": "Customer admin updates endpoint URL to production. Replay events once endpoint healthy.",
+  "difficulty": "easy"
+}

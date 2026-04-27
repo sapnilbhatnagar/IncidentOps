@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-25-029",
+  "gold_runbook": "RB013",
+  "gold_root_cause": "Schema change removed a required field consumers expect. All consumer pods crashed with deserialization errors and OOMKill in retry loop.",
+  "gold_remediation": "Roll back the schema change. Restart consumer pods. Process DLQ messages after schema rollback.",
+  "difficulty": "hard"
+}

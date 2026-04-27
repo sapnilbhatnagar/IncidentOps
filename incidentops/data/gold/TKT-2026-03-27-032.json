@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-27-032",
+  "gold_runbook": "RB014",
+  "gold_root_cause": "CDN configuration change set Cache-Control max-age to 3600s on Analytics API responses instead of correct 300s.",
+  "gold_remediation": "Platform Engineering to correct CDN configuration to 300s. Purge cached responses for affected endpoints.",
+  "difficulty": "medium"
+}

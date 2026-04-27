@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-04-001",
+  "gold_runbook": "RB001",
+  "gold_root_cause": "Customer rotated their IdP SAML certificate but their internal SDK is caching JWKS for 24h. Stale cache rejects new token signatures.",
+  "gold_remediation": "Customer admin must clear SDK JWKS cache or wait TTL. Educate on shorter cache TTL configuration.",
+  "difficulty": "medium"
+}

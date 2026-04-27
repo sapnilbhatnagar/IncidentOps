@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-06-003",
+  "gold_runbook": "RB003",
+  "gold_root_cause": "Primary delivery pool degraded due to upstream worker capacity issue. Failover to standby blocked by expired TLS certificate on standby pool.",
+  "gold_remediation": "Authorise failover to standby. Emergency certificate rotation per security runbook.",
+  "difficulty": "hard"
+}

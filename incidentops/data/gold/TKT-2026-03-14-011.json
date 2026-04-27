@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-14-011",
+  "gold_runbook": "RB006",
+  "gold_root_cause": "Customer did not migrate from deprecated v1 API before sunset date of 2026-03-14. 410 Gone is expected and correct per deprecation policy.",
+  "gold_remediation": "Provide v2 migration guide. Extended access window only if enterprise contract and executive approval obtained.",
+  "difficulty": "easy"
+}

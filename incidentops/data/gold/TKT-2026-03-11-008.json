@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-11-008",
+  "gold_runbook": "RB002",
+  "gold_root_cause": "Cloud provider maintenance event affecting VertexCloud CDN in both regions. Provider-side issue, not customer or VertexCloud fault.",
+  "gold_remediation": "Hold and monitor. Communicate via incident bridge. Prepare proactive comms language for affected customers.",
+  "difficulty": "medium"
+}

@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-17-018",
+  "gold_runbook": "RB008",
+  "gold_root_cause": "Analytics Cloud dashboard has a 15-minute refresh cache. Data was synced correctly \u2014 customer checked before refresh window elapsed.",
+  "gold_remediation": "Explain the 15-minute cache behaviour. Customer can trigger manual refresh via Analytics dashboard settings.",
+  "difficulty": "easy"
+}

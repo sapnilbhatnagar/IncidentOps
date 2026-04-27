@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-15-013",
+  "gold_runbook": "RB007",
+  "gold_root_cause": "SDK v4.21 introduced regression where list response pagination wrapper returns None instead of empty list when result set is empty.",
+  "gold_remediation": "Advise customer to stay on v4.20 until patch released. Escalate to SDK team for hotfix release.",
+  "difficulty": "medium"
+}

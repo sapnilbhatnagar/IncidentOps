@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-05-002",
+  "gold_runbook": "RB002",
+  "gold_root_cause": "Customer-side retry storm. Their nightly batch job hit a transient 502 at 17:30, retry-without-backoff loop kicked in and saturated their per-tenant limit.",
+  "gold_remediation": "Recommend exponential backoff and SDK upgrade. Confirm batch job pattern. No platform action.",
+  "difficulty": "medium"
+}

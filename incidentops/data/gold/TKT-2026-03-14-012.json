@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-14-012",
+  "gold_runbook": "RB006",
+  "gold_root_cause": "v4 API schema moved metadata field from nested under record to top-level. Documented breaking change in migration guide. Customer did not read migration notes.",
+  "gold_remediation": "Share migration guide section on schema changes. Customer updates parser. No platform action.",
+  "difficulty": "easy"
+}

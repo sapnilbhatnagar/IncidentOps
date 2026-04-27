@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-21-023",
+  "gold_runbook": "RB010",
+  "gold_root_cause": "EU region suffered thundering herd of reconnections after 90-second DB availability blip. All services reconnected simultaneously, saturating pool ceiling.",
+  "gold_remediation": "Wait for thundering herd to self-resolve with exponential backoff. If not resolving in 5 min engage Platform Engineering for controlled traffic shedding.",
+  "difficulty": "medium"
+}

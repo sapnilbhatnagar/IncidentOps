@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-24-027",
+  "gold_runbook": "RB012",
+  "gold_root_cause": "EU region node failure removed 6 of 8 pods from load balancer rotation simultaneously. Remaining 2 pods unable to handle traffic. Cloud provider node failure.",
+  "gold_remediation": "Platform Engineering to launch replacement pods in EU region. Cloud provider to investigate node failure.",
+  "difficulty": "hard"
+}

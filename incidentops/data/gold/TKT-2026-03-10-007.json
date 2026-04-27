@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-10-007",
+  "gold_runbook": "RB003",
+  "gold_root_cause": "Customer rotated webhook signing secret but did not update their receiver application simultaneously. Mismatch window of 70 minutes.",
+  "gold_remediation": "Confirm with customer admin. Recommend coordinated rotation procedure with overlap window. No platform action.",
+  "difficulty": "easy"
+}
