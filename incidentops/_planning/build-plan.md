@@ -111,9 +111,9 @@ Target: 15 runbooks, 80 tickets, 8 incidents, extended telemetry, 30 gold-labell
 
 | ID | Module | Description | Status |
 |---|---|---|---|
-| AGENT-006 | Diagnosis prompt | Opus-tier prompt: forbids fabrication, requires per-claim span citation, abstains below threshold | [ ] |
-| AGENT-007 | `Diagnosis` schema | Pydantic: root_cause_hypothesis, confidence, evidence_spans, next_action, abstain_reason | [ ] |
-| AGENT-008 | `diagnose()` API | Public interface wired to retrieval output | [ ] |
+| AGENT-006 | Diagnosis prompt | Opus-tier prompt: forbids fabrication, requires per-claim span citation, abstains below threshold | [x] |
+| AGENT-007 | `Diagnosis` schema | Pydantic: root_cause_hypothesis, confidence, evidence_spans, next_action, abstain_reason | [x] |
+| AGENT-008 | `diagnose()` API | Public interface wired to retrieval output | [x] |
 | EVAL-012 | Diagnosis eval | Honest grader pass on 30/30 gold; schema validates 100% | [ ] |
 
 ---
