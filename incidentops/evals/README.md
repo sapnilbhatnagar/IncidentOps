@@ -82,8 +82,8 @@ Status keys: `PASS` cleared · `ADVISORY ↓` below target, does not block · `F
 
 ## Adversarial datasets
 
-| File | Purpose |
-|---|---|
-| `data/adversarial/injections.jsonl` | Prompt injection attempts (role hijack, context poisoning, data exfiltration) |
-| `data/adversarial/out_of_scope.jsonl` | Legal advice, financial authorisation, HR decisions, customer comms |
-| `data/adversarial/empty_evidence.jsonl` | Tickets where the only correct answer is to abstain |
+| File                                    | Purpose                                                                       |
+| --------------------------------------- | ----------------------------------------------------------------------------- |
+| `data/adversarial/injections.jsonl`     | Prompt injection attempts (role hijack, context poisoning, data exfiltration) |
+| `data/adversarial/out_of_scope.jsonl`   | Legal advice, financial authorisation, HR decisions, customer comms           |
+| `data/adversarial/empty_evidence.jsonl` | Tickets where the only correct answer is to abstain                           |
