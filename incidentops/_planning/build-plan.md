@@ -168,10 +168,10 @@ Target: 15 runbooks, 80 tickets, 8 incidents, extended telemetry, 30 gold-labell
 
 | ID | Module | Description | Status |
 |---|---|---|---|
-| DASH-001 | Ticket queue view | List of gold incidents with status and category | [ ] |
-| DASH-002 | Single-ticket workspace | Diagnosis panel + evidence panel with clickable provenance | [ ] |
-| DASH-003 | Eval scoreboard | Latest HHH numbers from CI artefact | [ ] |
-| DASH-004 | Vercel deploy | Auto-deploy wired; public URL reachable | [ ] |
+| DASH-001 | Ticket queue view | List of gold incidents with status and category | [x] |
+| DASH-002 | Single-ticket workspace | Diagnosis panel + evidence panel with clickable provenance | [x] |
+| DASH-003 | Eval scoreboard | Latest HHH numbers from CI artefact | [x] |
+| DASH-004 | Vercel deploy | Auto-deploy wired; public URL reachable | [x] |
 | DASH-005 | Playwright smoke test | Single-ticket workspace works on 3 random gold incidents | [ ] |
 
 ---

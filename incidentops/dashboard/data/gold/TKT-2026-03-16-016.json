@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-16-016",
+  "gold_runbook": "RB008",
+  "gold_root_cause": "Job worker OOMKilled at 10:18 mid-processing. Kubernetes restarted pod but job did not re-queue automatically due to missing restart policy.",
+  "gold_remediation": "Tier 3 to manually re-queue job via internal tooling. Platform Engineering to fix restart policy.",
+  "difficulty": "hard"
+}

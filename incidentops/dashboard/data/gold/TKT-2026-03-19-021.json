@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-19-021",
+  "gold_runbook": "RB009",
+  "gold_root_cause": "Customer uploaded only the leaf certificate without the intermediate CA chain. New cert uses a different intermediate not in trust store.",
+  "gold_remediation": "Customer must upload the full certificate chain (leaf + intermediate + root) in PEM bundle format.",
+  "difficulty": "medium"
+}

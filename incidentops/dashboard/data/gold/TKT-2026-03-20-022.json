@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-20-022",
+  "gold_runbook": "RB010",
+  "gold_root_cause": "Long-running analytics aggregation query held 340 of 350 available DB connections for 40 minutes. Running on production cluster instead of analytics replica.",
+  "gold_remediation": "DBA terminates long-running query. Scale connection pool ceiling. Route analytics queries to read replica.",
+  "difficulty": "hard"
+}

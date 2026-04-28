@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-13-010",
+  "gold_runbook": "RB001",
+  "gold_root_cause": "Customer admin removed cases:write OAuth scope from integration client during routine permissions audit without informing integration owner.",
+  "gold_remediation": "Customer admin re-grants cases:write scope. No retry needed once scope restored.",
+  "difficulty": "easy"
+}

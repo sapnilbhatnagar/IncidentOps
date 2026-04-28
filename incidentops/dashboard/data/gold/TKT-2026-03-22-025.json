@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-22-025",
+  "gold_runbook": "RB011",
+  "gold_root_cause": "Customer contacts table grew to 2.4M records. Query performs full table scan because custom field used in search filter is not indexed.",
+  "gold_remediation": "Add index on custom field (Platform Engineering, customer approval needed). Short-term: advise customer to narrow search filter.",
+  "difficulty": "medium"
+}

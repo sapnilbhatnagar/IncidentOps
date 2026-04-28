@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-08-005",
+  "gold_runbook": "RB005",
+  "gold_root_cause": "Service account configured across two tenants by customer parent company. Records correctly scoped; UI label misread by user as cross-tenant.",
+  "gold_remediation": "Pull VC-Identity audit log. Confirm access scope. Engage Privacy if genuine cross-tenant access found.",
+  "difficulty": "medium"
+}

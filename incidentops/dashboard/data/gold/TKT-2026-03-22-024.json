@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-22-024",
+  "gold_runbook": "RB011",
+  "gold_root_cause": "v2.14.1 introduced N+1 query pattern in request authorization middleware. Every API call makes one DB call per permission scope instead of batched lookup.",
+  "gold_remediation": "Roll back v2.14.1 immediately. Fix N+1 pattern with batched authorization lookup and re-deploy.",
+  "difficulty": "hard"
+}

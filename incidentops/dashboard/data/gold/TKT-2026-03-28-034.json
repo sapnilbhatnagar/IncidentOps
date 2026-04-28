@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-28-034",
+  "gold_runbook": "RB015",
+  "gold_root_cause": "Network partition between US-EAST-1 and EU-WEST-1 caused replication to pause for 30 minutes. 45 minutes of lag accumulated during partition window.",
+  "gold_remediation": "Monitor lag drainage \u2014 self-resolves as replication catches up. Throttle non-critical EU write traffic to allow faster catch-up. Notify EU enterprise TAMs.",
+  "difficulty": "hard"
+}

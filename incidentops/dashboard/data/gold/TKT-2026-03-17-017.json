@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-17-017",
+  "gold_runbook": "RB008",
+  "gold_root_cause": "Customer retried a partial-success import without an idempotency key. Both original and retry partially succeeded, creating duplicates.",
+  "gold_remediation": "Provide SQL query to identify duplicates by external_id and created_at window. Customer reconciles. Educate on idempotency_key usage.",
+  "difficulty": "medium"
+}

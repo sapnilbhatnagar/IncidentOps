@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-15-014",
+  "gold_runbook": "RB007",
+  "gold_root_cause": "Customer CI pipeline sets VC_API_KEY after SDK import in bootstrap script. SDK reads env var at import time, not lazily.",
+  "gold_remediation": "Customer must set environment variables before importing or instantiating the SDK client.",
+  "difficulty": "easy"
+}

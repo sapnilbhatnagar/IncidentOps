@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-24-028",
+  "gold_runbook": "RB012",
+  "gold_root_cause": "Zero-downtime rolling deploy misconfiguration: maxUnavailable set to 50% means half the pods are unavailable during rollout, overwhelming remaining pods under traffic.",
+  "gold_remediation": "Pause rollout. Fix maxUnavailable to 25% and maxSurge to 50%. Resume rollout.",
+  "difficulty": "medium"
+}

@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-18-019",
+  "gold_runbook": "RB009",
+  "gold_root_cause": "Multiple enterprise customers had implemented certificate pinning. VertexCloud rotated the leaf certificate as scheduled. Pinned-cert customers immediately failed.",
+  "gold_remediation": "Identify all certificate-pinning customers. Provide new cert fingerprint. Strongly advise against certificate pinning \u2014 use CA pinning instead.",
+  "difficulty": "hard"
+}

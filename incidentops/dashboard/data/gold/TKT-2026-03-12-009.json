@@ -1,0 +1,7 @@
+{
+  "ticket_id": "TKT-2026-03-12-009",
+  "gold_runbook": "RB004",
+  "gold_root_cause": "SDK v4.18 introduced bug where dedup-key was regenerated on retry rather than reused. VC-Sync dedup engine could not detect identical content with different keys.",
+  "gold_remediation": "Page Data Platform Engineering. Hotfix or roll back SDK release. Reconciliation team de-duplicates affected records.",
+  "difficulty": "hard"
+}
