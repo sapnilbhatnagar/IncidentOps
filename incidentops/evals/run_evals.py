@@ -49,6 +49,7 @@ def main() -> None:
 
     hard_failures: list[str] = []
     advisory_failures: list[str] = []
+    results_rows: list[dict] = []
 
     for category, suite in suites.items():
         print(f"\n{category.upper()}")
@@ -58,6 +59,14 @@ def main() -> None:
             for key in check_keys:
                 mean, n_pass, n_total = aggregate_per_ticket(per_ticket, key)
                 _emit(category, key, mean, n_pass, n_total, hard_failures, advisory_failures)
+                results_rows.append({
+                    "check": f"{category}/{key}",
+                    "score": round(mean, 4),
+                    "n_pass": n_pass,
+                    "n_total": n_total,
+                    "passed": n_pass == n_total,
+                    "hard_gate": HARD_GATES.get((category, key), False),
+                })
 
         for key, value in suite.get("aggregate", {}).items():
             label = f"{category}/{key}"
@@ -67,15 +76,35 @@ def main() -> None:
             print(f"  {label:<44}  {value['score']:.3f}  [{status}]   {value['detail']}")
             if not passed:
                 (hard_failures if is_hard else advisory_failures).append(label)
+            results_rows.append({
+                "check": label,
+                "score": round(value["score"], 4),
+                "detail": value["detail"],
+                "passed": passed,
+                "hard_gate": is_hard,
+            })
 
+    gate_passed = not hard_failures
     print("\n" + "=" * 72)
     if hard_failures:
         print(f"GATE RESULT: FAIL — {len(hard_failures)} hard gate(s):")
         for f in hard_failures:
             print(f"  ✗ {f}")
-        sys.exit(1)
     advisory_note = f" ({len(advisory_failures)} advisory below target)" if advisory_failures else ""
-    print(f"GATE RESULT: PASS{advisory_note}")
+    if gate_passed:
+        print(f"GATE RESULT: PASS{advisory_note}")
+
+    # Write machine-readable results for CI reporter
+    out = Path("eval-results.json")
+    out.write_text(json.dumps({
+        "gate": "pass" if gate_passed else "fail",
+        "hard_failures": hard_failures,
+        "advisory_failures": advisory_failures,
+        "checks": results_rows,
+    }, indent=2))
+
+    if not gate_passed:
+        sys.exit(1)
 
 
 def _emit(category, key, mean, n_pass, n_total, hard, advisory):

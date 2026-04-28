@@ -155,10 +155,10 @@ Target: 15 runbooks, 80 tickets, 8 incidents, extended telemetry, 30 gold-labell
 
 | ID | Module | Description | Status |
 |---|---|---|---|
-| CI-001 | GitHub Actions workflow | lint → unit → retrieval eval → HHH eval suite → dashboard build | [ ] |
-| CI-002 | PR comment reporter | Eval results summarised as PR comment | [ ] |
-| CI-003 | Branch protection | main requires green Honest + Harmless; Helpful advisory | [ ] |
-| CI-004 | Read-only invariant gate | Test PR that breaks read-only invariant is correctly blocked | [ ] |
+| CI-001 | GitHub Actions workflow | lint → unit → retrieval eval → HHH eval suite → dashboard build | [x] |
+| CI-002 | PR comment reporter | Eval results summarised as PR comment | [x] |
+| CI-003 | Branch protection | main requires green Honest + Harmless; Helpful advisory | [x] |
+| CI-004 | Read-only invariant gate | Test PR that breaks read-only invariant is correctly blocked | [x] |
 
 ---
 
