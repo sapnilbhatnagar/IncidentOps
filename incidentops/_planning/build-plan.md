@@ -140,11 +140,11 @@ Target: 15 runbooks, 80 tickets, 8 incidents, extended telemetry, 30 gold-labell
 
 | ID | Module | Description | Status |
 |---|---|---|---|
-| AGENT-009 | `RemediationDraft` schema | Steps, expected effect, rollback note, required human approver | [ ] |
-| AGENT-010 | `remediate()` API | Opus-tier; produces text only, no actions | [ ] |
-| AGENT-011 | `HandoffPacket` schema | Ticket + diagnosis + retrieved spans + draft + confidence trace | [ ] |
-| AGENT-012 | `handoff()` API | Emits structured payload; mode flag: shadow / assist / guided | [ ] |
-| AGENT-013 | Pipeline runner | Wires all 6 stages: triage → retrieve → diagnose → tools → remediate → handoff | [ ] |
+| AGENT-009 | `RemediationDraft` schema | Steps, expected effect, rollback note, required human approver | [x] |
+| AGENT-010 | `remediate()` API | Opus-tier; produces text only, no actions | [x] |
+| AGENT-011 | `HandoffPacket` schema | Ticket + diagnosis + retrieved spans + draft + confidence trace | [x] |
+| AGENT-012 | `handoff()` API | Emits structured payload; mode flag: shadow / assist / guided | [x] |
+| AGENT-013 | Pipeline runner | Wires all 6 stages: triage → retrieve → diagnose → tools → remediate → handoff | [x] |
 | EVAL-014 | End-to-end eval | All 3 HHH gates pass on 30 gold incidents; Helpful beats always-abstain baseline | [ ] |
 
 ---
